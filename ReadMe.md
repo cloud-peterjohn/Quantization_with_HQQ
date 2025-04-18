@@ -39,6 +39,7 @@ In this part, we will be using [HQQ](https://github.com/mobiusml/hqq) library to
     - Create a virtual environment
         ```bash
         python3 -m venv <your-env-name>
+        exec bash   # for ubuntu which uses dash
         source <your-env-name>/bin/activate
         ```
     - Install the required packages
