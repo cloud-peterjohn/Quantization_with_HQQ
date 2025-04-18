@@ -96,16 +96,16 @@ Please hand in report in **HackMD** to answer the following questions:
     
 |       nbit       |   32   |  8  |  4  |  3  |  2  |
 |:----------------:|:------:|:---:|:---:|:---:|:---:|
-|   Accuracy (%)   | 90.99  |90.95|89.84|86.56|20.91|
-| Model Size (MiB) | 82.540 |26.852|16.727|14.706|11.665|
+|   Accuracy (%)   |90.99|90.95|89.84|86.56|20.91|
+| Model Size (MiB) |82.540|26.852|16.727|14.706|11.665|
 
 2. Try to quantize `Llama3.2-1B-Instruct` from FP16 to nbit integer (n=8,4,3,2), fill in the following chart. **(group_size=64)** **(10%)**
 
 |        nbit         |    16    |  8  |  4  |  2  |
 |:-------------------:|:--------:|:---:|:---:|:---:|
-|  Perplexity (PPL)   |  13.160  ||||
-|  Model Size (MiB)   | 2858.129 ||||
-| Throughput (toks/s) |||||
+|  Perplexity (PPL)   |13.160||||
+|  Model Size (MiB)   |2858.129||||
+| Throughput (toks/s) |93.062||||
 
 
 3. Explain how you determine the quantization method for `DeiT-S` and `Llama3.2-1B-Instruct` for best performance. If you can provide a visualized analysis or any chart according to your experiment would be better. **(15%)**
