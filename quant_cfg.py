@@ -115,13 +115,13 @@ def get_quant_config_slm(model):
                 nbits=8, group_size=128
             )
             quant_config[f"model.layers.{i}.mlp.gate_proj"] = BaseQuantizeConfig(
-                nbits=6, group_size=64
+                nbits=4, group_size=64
             )
             quant_config[f"model.layers.{i}.mlp.up_proj"] = BaseQuantizeConfig(
-                nbits=6, group_size=64
+                nbits=4, group_size=64
             )
             quant_config[f"model.layers.{i}.mlp.down_proj"] = BaseQuantizeConfig(
-                nbits=6, group_size=64
+                nbits=4, group_size=64
             )
 
     return quant_config
