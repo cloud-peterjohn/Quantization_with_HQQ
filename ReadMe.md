@@ -152,6 +152,8 @@ $$
   Score = 20 - Max(90 - Accruacy, \ 0) \times 10 + 17 - Model\_Size (MiB)
 $$
 
+Results:
+![alt text](deit_result.png)
 
 2. For `Llama3.2-1B-Instruct`, TAs will run`run_slm.py` and load quantization configuration with your `get_quant_config_slm` function. The Score will be calculated base on the criteria below: 
 
@@ -160,7 +162,9 @@ $$
     score += 5 if PPL <= 14 else 0
     score += 5 if speedup >= 1.3
     ```
-    
+
+Results:
+
 ## Reference
 - [Introduction to Quantization - 1](https://medium.com/@anhtuan_40207/introduction-to-quantization-09a7fb81f9a4)
 - [Introduction to Qunatization - 2](https://towardsdatascience.com/introduction-to-weight-quantization-2494701b9c0c/)
