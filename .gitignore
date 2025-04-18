@@ -1,3 +1,4 @@
 .vscode/
 113550901/
 *.pth
+huggingface_token.txt
