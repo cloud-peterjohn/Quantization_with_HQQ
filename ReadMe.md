@@ -103,9 +103,9 @@ Please hand in report in **HackMD** to answer the following questions:
 
 |        nbit         |    16    |  8  |  4  |  2  |
 |:-------------------:|:--------:|:---:|:---:|:---:|
-|  Perplexity (PPL)   |13.160||||
-|  Model Size (MiB)   |2858.129||||
-| Throughput (toks/s) |93.062||||
+|  Perplexity (PPL)   |13.160|||215879.047|
+|  Model Size (MiB)   |2858.129|||1292.134|
+| Throughput (toks/s) |93.062|||164.196|
 
 
 3. Explain how you determine the quantization method for `DeiT-S` and `Llama3.2-1B-Instruct` for best performance. If you can provide a visualized analysis or any chart according to your experiment would be better. **(15%)**
