@@ -102,51 +102,27 @@ def get_quant_config_slm(model):
                 nbits=8, group_size=64
             )
         else:  # middle layers
-            # if i % 2 == 0:
-            if True:
-                quant_config[f"model.layers.{i}.self_attn.q_proj"] = BaseQuantizeConfig(
-                    nbits=4, group_size=32
-                )
-                quant_config[f"model.layers.{i}.self_attn.k_proj"] = BaseQuantizeConfig(
-                    nbits=4, group_size=32
-                )
-                quant_config[f"model.layers.{i}.self_attn.v_proj"] = BaseQuantizeConfig(
-                    nbits=4, group_size=32
-                )
-                quant_config[f"model.layers.{i}.self_attn.o_proj"] = BaseQuantizeConfig(
-                    nbits=4, group_size=32
-                )
-                quant_config[f"model.layers.{i}.mlp.gate_proj"] = BaseQuantizeConfig(
-                    nbits=4, group_size=64
-                )
-                quant_config[f"model.layers.{i}.mlp.up_proj"] = BaseQuantizeConfig(
-                    nbits=4, group_size=64
-                )
-                quant_config[f"model.layers.{i}.mlp.down_proj"] = BaseQuantizeConfig(
-                    nbits=4, group_size=64
-                )
-            else:
-                quant_config[f"model.layers.{i}.self_attn.q_proj"] = BaseQuantizeConfig(
-                    nbits=8, group_size=128
-                )
-                quant_config[f"model.layers.{i}.self_attn.k_proj"] = BaseQuantizeConfig(
-                    nbits=8, group_size=128
-                )
-                quant_config[f"model.layers.{i}.self_attn.v_proj"] = BaseQuantizeConfig(
-                    nbits=8, group_size=128
-                )
-                quant_config[f"model.layers.{i}.self_attn.o_proj"] = BaseQuantizeConfig(
-                    nbits=8, group_size=128
-                )
-                quant_config[f"model.layers.{i}.mlp.gate_proj"] = BaseQuantizeConfig(
-                    nbits=4, group_size=64
-                )
-                quant_config[f"model.layers.{i}.mlp.up_proj"] = BaseQuantizeConfig(
-                    nbits=4, group_size=64
-                )
-                quant_config[f"model.layers.{i}.mlp.down_proj"] = BaseQuantizeConfig(
-                    nbits=4, group_size=64
-                )
+            quant_config[f"model.layers.{i}.self_attn.q_proj"] = BaseQuantizeConfig(
+                nbits=4, group_size=32
+            )
+            quant_config[f"model.layers.{i}.self_attn.k_proj"] = BaseQuantizeConfig(
+                nbits=4, group_size=32
+            )
+            quant_config[f"model.layers.{i}.self_attn.v_proj"] = BaseQuantizeConfig(
+                nbits=4, group_size=32
+            )
+            quant_config[f"model.layers.{i}.self_attn.o_proj"] = BaseQuantizeConfig(
+                nbits=4, group_size=32
+            )
+            quant_config[f"model.layers.{i}.mlp.gate_proj"] = BaseQuantizeConfig(
+                nbits=4, group_size=64
+            )
+            quant_config[f"model.layers.{i}.mlp.up_proj"] = BaseQuantizeConfig(
+                nbits=4, group_size=64
+            )
+            quant_config[f"model.layers.{i}.mlp.down_proj"] = BaseQuantizeConfig(
+                nbits=4, group_size=64
+            )
 
     return quant_config
 

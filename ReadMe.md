@@ -164,7 +164,7 @@ Results:
     ```
 
 Results:
-
+![alt text](Llama_result.png)
 ## Reference
 - [Introduction to Quantization - 1](https://medium.com/@anhtuan_40207/introduction-to-quantization-09a7fb81f9a4)
 - [Introduction to Qunatization - 2](https://towardsdatascience.com/introduction-to-weight-quantization-2494701b9c0c/)
