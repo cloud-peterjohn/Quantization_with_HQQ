@@ -56,6 +56,10 @@ In this part, we will be using [HQQ](https://github.com/mobiusml/hqq) library to
         pip3 install hqq==0.2.5
         pip3 install triton==3.2.0
         ```
+        Then
+        ```bash
+        huggingface-cli login --token [your_token]
+        ```
 
 ### Section 2.1 : Quantize DeiT-S (20%+)
 
