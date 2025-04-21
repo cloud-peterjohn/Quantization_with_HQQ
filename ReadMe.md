@@ -1,9 +1,9 @@
 # **Quantization**
+(113550901, 25 Spring)
 
 ## Introduction
 
 This lab aims to learn the linear quantization, then quantize the DeiT model & Small Language Model, resulting in reduced model size and potentially improved inference speed without significant loss in accuracy.
-
 
 ## Part 1 : Linear Quatization Implementation (30%)
 
