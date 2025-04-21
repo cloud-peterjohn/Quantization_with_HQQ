@@ -1,4 +1,5 @@
 .vscode/
 113550901/
 # *.pth
+*.xlsx
 huggingface_token.txt
