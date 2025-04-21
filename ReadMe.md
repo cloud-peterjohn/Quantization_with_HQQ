@@ -114,7 +114,27 @@ Please hand in report in **HackMD** to answer the following questions:
 
 3. Explain how you determine the quantization method for `DeiT-S` and `Llama3.2-1B-Instruct` for best performance. If you can provide a visualized analysis or any chart according to your experiment would be better. **(15%)**
 
+##### DeiT-S
+- Each Vision Transformer block contains a self-attention module and a multi-layer perceptron (MLP). The MSA includes QKV projection and self-attention computation, with denser parameter distribution, making it more sensitive during quantization. On the other hand, MLPs are less sensitive, allowing the use of slightly larger `group_size` and `nbits` to balance precision and computational efficiency.
+- The input layer needs to capture raw feature details, while the output layer directly affects classification results. Therefore, smaller `group_size` and larger `nbits` are employed for the first and last layers.
+- The first and last quarter layers, being closer to the input and output, adopt higher-precision quantization to preserve classification effectiveness. Conversely, middle layers employ relatively aggressive strategies to enhance model compression rates.
+##### Llama3.2-1B-Instruct
+- Similar to DeiT-S, the first quarter, middle layers, and last quarter layers are quantized using different strategies, with special handling for the first and last layers. Each Transformer layer's self-attention and fully connected parts also utilize distinct strategies.
+
+Here is the visualized analysis:
+- For DeiT-S, comparisons were made for **nbits=4** under **group_size=32/64/other strategies**, evaluating model size and precision changes.
+  ![ablation_deit](ablation_deit.png)
+- For Llama3.2-1B-Instruct, comparisons were made for **group_size=64** under **nbits=4/8** and other strategies, evaluating model size and PPL changes.
+  ![ablation_llm](ablation_llm.png)
+
+
 4. Which model is harder to quantize, what might be the reason ?  **(5%)**
+
+The challenges of Llama3.2-1B-Instruct are more pronounced. Using the same quantization strategy with 4-bit-64-group, the perplexity of the Llama model increases significantly, while the accuracy reduction in DeiT is relatively minor.
+
+This may be because Llama3.2, as a language model, has input sequences with variable lengths and content, resulting in a more uneven distribution of activation values and potentially more extreme outliers. Furthermore, language models are highly sensitive to subtle numerical changes during inference, which can lead to accumulated errors.
+
+On the other hand, DeiT is primarily used for image-related tasks, where input features are usually fixed-size images with relatively stable data distribution. Consequently, activation values and weight ranges in DeiT are more concentrated.
 
 5. Please attach screenshots showing the speedup and PPL of `Llama3.2-1B-Instruct` in your report. The screenshot will be used as the evidence in case performance drops due to different hardware platform. **(For Criteria of Section 2.2)**
 
