@@ -1,4 +1,4 @@
-# **Quantization**
+# **Quantization with HQQ**
 
 ## Introduction
 
